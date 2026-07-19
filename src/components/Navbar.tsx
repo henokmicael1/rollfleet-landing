@@ -3,16 +3,15 @@ import { Menu, X } from 'lucide-react'
 
 const APP_URL = 'https://app.rollfleet.com'
 
-const navLinks = [
+const links = [
   { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Pricing', href: '#pricing' },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -21,81 +20,52 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-border'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container-lg">
-        <div className="flex h-16 items-center justify-between lg:h-[72px]">
-          <a href="#" className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-xs font-bold text-white">
-              RF
-            </div>
-            <span className="font-display text-[17px] font-semibold text-foreground">
-              RollFleet
-            </span>
-          </a>
-
-          <div className="hidden items-center gap-8 md:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[13px] text-foreground-subtle transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? 'bg-bg-white/90 backdrop-blur-lg shadow-sm' : ''}`}>
+      <nav className="container flex h-16 items-center justify-between">
+        <a href="#" className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+            <span className="font-display text-sm font-bold text-white">RF</span>
           </div>
+          <span className="font-display text-lg font-semibold text-text-primary">RollFleet</span>
+        </a>
 
-          <div className="hidden items-center gap-5 md:flex">
-            <a
-              href={`${APP_URL}/login`}
-              className="text-[13px] text-foreground-subtle transition-colors hover:text-foreground"
-            >
-              Log In
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="text-sm text-text-muted hover:text-text-primary transition-colors">
+              {l.label}
             </a>
-            <a
-              href={`${APP_URL}/login`}
-              className="rounded-lg bg-brand px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-brand-dark"
-            >
-              Get Started
-            </a>
-          </div>
-
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-foreground-subtle md:hidden"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          ))}
         </div>
-      </div>
 
-      {mobileOpen && (
-        <div className="bg-white/95 backdrop-blur-xl border-b border-border md:hidden">
-          <div className="container-lg space-y-1 pb-6 pt-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block rounded-lg px-3 py-3 text-sm text-foreground-muted hover:bg-surface hover:text-foreground"
-              >
-                {link.label}
+        <div className="hidden md:flex items-center gap-3">
+          <a href={`${APP_URL}/login`} className="text-sm text-text-muted hover:text-text-primary transition-colors px-4 py-2">
+            Log in
+          </a>
+          <a href={`${APP_URL}/login`} className="btn btn-primary">
+            Get Started
+          </a>
+        </div>
+
+        <button onClick={() => setOpen(!open)} className="md:hidden text-text-primary">
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="md:hidden bg-bg-white border-b border-border">
+          <div className="container py-6 space-y-4">
+            {links.map((l) => (
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-text-secondary hover:text-text-primary py-2">
+                {l.label}
               </a>
             ))}
-            <div className="flex gap-3 pt-4">
-              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg border border-border py-2.5 text-center text-sm text-foreground-muted hover:bg-surface">Log In</a>
-              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg bg-brand py-2.5 text-center text-sm font-medium text-white hover:bg-brand-dark">Get Started</a>
+            <div className="pt-4 flex gap-3">
+              <a href={`${APP_URL}/login`} className="btn btn-secondary flex-1">Log in</a>
+              <a href={`${APP_URL}/login`} className="btn btn-primary flex-1">Get Started</a>
             </div>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   )
 }
