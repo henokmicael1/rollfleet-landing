@@ -1,20 +1,23 @@
-import { Upload, Send, DollarSign } from 'lucide-react'
+import { Upload, Navigation, Banknote } from 'lucide-react'
 
 const steps = [
   {
     icon: Upload,
+    num: '01',
     title: 'Upload Rate Con',
-    description: 'Drag and drop your broker rate confirmation. AI extracts all load details automatically.',
+    description: 'Drop your broker rate confirmation PDF. AI extracts all details automatically.',
   },
   {
-    icon: Send,
+    icon: Navigation,
+    num: '02',
     title: 'Dispatch Load',
-    description: 'Assign to a driver and truck with one click. Track pickup to delivery in real-time.',
+    description: 'Assign to a driver and truck. Track pickup to delivery in real-time.',
   },
   {
-    icon: DollarSign,
+    icon: Banknote,
+    num: '03',
     title: 'Get Paid',
-    description: 'Generate invoices, submit to factoring, and calculate driver pay — fully automated.',
+    description: 'Generate invoices, submit to factoring, calculate driver pay. All automated.',
   },
 ]
 
@@ -22,36 +25,26 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="section">
       <div className="container">
-        <div className="text-center mb-12">
-          <p className="text-accent font-semibold text-sm uppercase tracking-wide mb-3">How It Works</p>
+        <div className="text-center max-w-lg mx-auto mb-12">
+          <p className="section-label">How It Works</p>
           <h2 className="h2">From rate con to settlement in minutes</h2>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((s, i) => (
-              <div key={i} className="relative text-center">
-                {/* Connector line */}
-                {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-border" />
-                )}
-                
-                <div className="mb-5">
-                  <div className="relative inline-flex">
-                    <div className="w-20 h-20 rounded-2xl bg-bg-white border border-border flex items-center justify-center shadow-sm">
-                      <s.icon size={32} className="text-accent" strokeWidth={1.5} />
-                    </div>
-                    <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-md">
-                      {i + 1}
-                    </span>
-                  </div>
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {steps.map((s, i) => (
+            <div key={s.num} className="text-center">
+              <div className="relative inline-flex mb-5">
+                <div className="w-16 h-16 rounded-2xl bg-bg border border-border flex items-center justify-center">
+                  <s.icon size={26} className="text-accent" strokeWidth={1.5} />
                 </div>
-                
-                <h3 className="h3 mb-2">{s.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">{s.description}</p>
+                <span className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-lg bg-accent text-white text-xs font-semibold flex items-center justify-center">
+                  {i + 1}
+                </span>
               </div>
-            ))}
-          </div>
+              <h3 className="h3 mb-2">{s.title}</h3>
+              <p className="text-text-muted text-sm">{s.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
