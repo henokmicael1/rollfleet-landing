@@ -293,7 +293,7 @@ export function Terms() {
                 <p className="text-text-secondary leading-relaxed">
                   For questions about these Terms, please contact us at:<br />
                   <strong className="text-text-primary">Email:</strong>{' '}
-                  <a href="mailto:legal@rollfleet.com" className="text-accent hover:underline">legal@rollfleet.com</a><br />
+                  <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
                   <strong className="text-text-primary">Address:</strong> RollFleet, LLC, Wilmington, Delaware, USA
                 </p>
               </section>

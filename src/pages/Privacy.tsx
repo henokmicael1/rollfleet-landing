@@ -29,7 +29,7 @@ export function Privacy() {
                 <p className="text-text-secondary leading-relaxed">
                   For the purposes of applicable data protection laws, RollFleet, LLC is the data controller responsible 
                   for your personal data. For data processing inquiries, contact us at{' '}
-                  <a href="mailto:privacy@rollfleet.com" className="text-accent hover:underline">privacy@rollfleet.com</a>.
+                  <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a>.
                 </p>
               </section>
 
@@ -295,7 +295,7 @@ export function Privacy() {
                 <h3 className="font-semibold text-text-primary mt-6 mb-3">10.3 Exercising Your Rights</h3>
                 <p className="text-text-secondary leading-relaxed">
                   To exercise any of these rights, contact us at{' '}
-                  <a href="mailto:privacy@rollfleet.com" className="text-accent hover:underline">privacy@rollfleet.com</a>. 
+                  <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a>. 
                   We will respond within 30 days (GDPR) or 45 days (CCPA). We may need to verify your identity before 
                   processing your request.
                 </p>
@@ -333,7 +333,7 @@ export function Privacy() {
                 <p className="text-text-secondary leading-relaxed">
                   For privacy-related questions, data requests, or concerns, contact us at:<br /><br />
                   <strong className="text-text-primary">Privacy Inquiries:</strong>{' '}
-                  <a href="mailto:privacy@rollfleet.com" className="text-accent hover:underline">privacy@rollfleet.com</a><br />
+                  <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
                   <strong className="text-text-primary">General Support:</strong>{' '}
                   <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
                   <strong className="text-text-primary">Address:</strong> RollFleet, LLC, Wilmington, Delaware, USA

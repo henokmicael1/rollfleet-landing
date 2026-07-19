@@ -23,7 +23,7 @@ export function Footer() {
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           <div className="col-span-2">
-            <a href="#" className="flex items-center gap-2.5 mb-4">
+            <a href="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
                 <span className="font-display text-sm font-bold text-white">RF</span>
               </div>

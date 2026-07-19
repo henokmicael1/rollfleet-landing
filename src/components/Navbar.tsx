@@ -4,9 +4,9 @@ import { Menu, X } from 'lucide-react'
 const APP_URL = 'https://app.rollfleet.com'
 
 const links = [
-  { label: 'Features', href: '#features' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Features', href: '/#features' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Pricing', href: '/#pricing' },
 ]
 
 export function Navbar() {
@@ -22,7 +22,7 @@ export function Navbar() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? 'bg-bg-white/90 backdrop-blur-lg shadow-sm' : ''}`}>
       <nav className="container flex h-16 items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
             <span className="font-display text-sm font-bold text-white">RF</span>
           </div>
