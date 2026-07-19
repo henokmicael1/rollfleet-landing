@@ -13,7 +13,7 @@ import { Footer } from './components/Footer'
 
 export function App() {
   return (
-    <div className="min-h-screen bg-dark-950">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <TrustBar />

@@ -1,32 +1,40 @@
 @import "tailwindcss";
 
 @theme {
+  /* Fonts */
   --font-display: "Outfit", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  --color-dark-950: #06080f;
-  --color-dark-900: #0a0d16;
-  --color-dark-850: #0e1220;
-  --color-dark-800: #131828;
-  --color-dark-700: #1c2333;
-  --color-dark-600: #2a3245;
-  --color-dark-500: #3d4760;
+  /* Light theme backgrounds */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f1f5f9;
 
-  --color-slate-500: #64748B;
-  --color-slate-400: #94A3B8;
-  --color-slate-300: #CBD5E1;
-  --color-slate-200: #E2E8F0;
-  --color-slate-50: #F8FAFC;
+  /* Text colors */
+  --color-foreground: #0f172a;
+  --color-foreground-muted: #475569;
+  --color-foreground-subtle: #64748b;
 
-  --color-brand: #14B8A6;
-  --color-brand-dark: #0D9488;
-  --color-brand-light: #2DD4BF;
-  --color-brand-glow: rgba(20, 184, 166, 0.08);
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-muted: #f1f5f9;
 
-  --color-emerald: #10B981;
-  --color-amber: #F59E0B;
-  --color-red: #EF4444;
-  --color-blue: #3B82F6;
+  /* Brand — consistent with rollfleet-web */
+  --color-brand: #14b8a6;
+  --color-brand-dark: #0d9488;
+  --color-brand-light: #2dd4bf;
+  --color-brand-muted: rgba(20, 184, 166, 0.08);
+
+  /* Semantic */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Dark elements (for contrast sections & dashboard previews) */
+  --color-dark: #0f172a;
+  --color-dark-muted: #1e293b;
 }
 
 @layer base {
@@ -38,20 +46,20 @@
 
   body {
     font-family: var(--font-body);
-    background-color: var(--color-dark-950);
-    color: var(--color-slate-400);
+    background-color: var(--color-background);
+    color: var(--color-foreground-muted);
     line-height: 1.6;
   }
 
   ::selection {
-    background-color: rgba(20, 184, 166, 0.25);
-    color: white;
+    background-color: rgba(20, 184, 166, 0.2);
+    color: var(--color-foreground);
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--color-dark-950); }
-  ::-webkit-scrollbar-thumb { background: var(--color-dark-600); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-dark-500); }
+  ::-webkit-scrollbar-track { background: var(--color-surface); }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 }
 
 @layer components {
@@ -79,9 +87,9 @@
   }
 
   .section-alt {
-    background-color: rgba(11, 13, 23, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .reveal {
@@ -97,7 +105,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #e2e8f0 0%, #14B8A6 60%, #2DD4BF 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #14b8a6 60%, #0d9488 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -107,7 +115,7 @@
 @layer utilities {
   @keyframes pulse-dot {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    50% { opacity: 0.4; }
   }
   .animate-pulse-dot {
     animation: pulse-dot 2s ease-in-out infinite;

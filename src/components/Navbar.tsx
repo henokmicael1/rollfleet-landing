@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
-const APP_URL = 'https://app.dev.rollfleet.com'
+const APP_URL = 'https://app.rollfleet.com'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -24,7 +24,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-950/80 backdrop-blur-2xl shadow-[0_1px_0_rgba(255,255,255,0.04)]'
+          ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-border'
           : 'bg-transparent'
       }`}
     >
@@ -34,7 +34,7 @@ export function Navbar() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-xs font-bold text-white">
               RF
             </div>
-            <span className="font-display text-[17px] font-semibold text-white">
+            <span className="font-display text-[17px] font-semibold text-foreground">
               RollFleet
             </span>
           </a>
@@ -44,7 +44,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] text-slate-500 transition-colors hover:text-slate-200"
+                className="text-[13px] text-foreground-subtle transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -54,13 +54,13 @@ export function Navbar() {
           <div className="hidden items-center gap-5 md:flex">
             <a
               href={`${APP_URL}/login`}
-              className="text-[13px] text-slate-500 transition-colors hover:text-white"
+              className="text-[13px] text-foreground-subtle transition-colors hover:text-foreground"
             >
               Log In
             </a>
             <a
               href={`${APP_URL}/login`}
-              className="rounded-lg bg-brand px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-brand-light"
+              className="rounded-lg bg-brand px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-brand-dark"
             >
               Get Started
             </a>
@@ -68,7 +68,7 @@ export function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-slate-400 md:hidden"
+            className="text-foreground-subtle md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -77,21 +77,21 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="bg-dark-950/95 backdrop-blur-2xl md:hidden">
+        <div className="bg-white/95 backdrop-blur-xl border-b border-border md:hidden">
           <div className="container-lg space-y-1 pb-6 pt-2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block rounded-lg px-3 py-3 text-sm text-slate-400 hover:bg-dark-800 hover:text-white"
+                className="block rounded-lg px-3 py-3 text-sm text-foreground-muted hover:bg-surface hover:text-foreground"
               >
                 {link.label}
               </a>
             ))}
             <div className="flex gap-3 pt-4">
-              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg border border-dark-600 py-2.5 text-center text-sm text-slate-300">Log In</a>
-              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg bg-brand py-2.5 text-center text-sm font-medium text-white">Get Started</a>
+              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg border border-border py-2.5 text-center text-sm text-foreground-muted hover:bg-surface">Log In</a>
+              <a href={`${APP_URL}/login`} className="flex-1 rounded-lg bg-brand py-2.5 text-center text-sm font-medium text-white hover:bg-brand-dark">Get Started</a>
             </div>
           </div>
         </div>

@@ -41,16 +41,16 @@ export function Features() {
   const ref = useScrollReveal()
 
   return (
-    <section id="features" className="py-28 lg:py-40">
+    <section id="features" className="py-24 lg:py-32">
       <div ref={ref} className="reveal container-lg">
-        <div className="mx-auto mb-16 max-w-xl text-center lg:mb-20">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-brand-light">
+        <div className="mx-auto mb-14 max-w-xl text-center lg:mb-16">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand">
             Features
           </p>
-          <h2 className="font-display text-3xl font-bold text-white lg:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-foreground lg:text-4xl">
             Everything You Need to Run Your Fleet
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-slate-400">
+          <p className="mt-4 text-base leading-relaxed text-foreground-muted">
             AI-powered tools, automated invoicing, real-time tracking, and a complete
             operations suite — purpose-built for carriers.
           </p>
@@ -60,13 +60,13 @@ export function Features() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl bg-dark-850 p-7 ring-1 ring-white/[0.05] transition-all hover:ring-white/[0.08] lg:p-8"
+              className="rounded-2xl bg-white p-7 border border-border shadow-sm transition-all hover:shadow-md hover:border-border/80 lg:p-8"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand/[0.08]">
-                <f.icon size={20} className="text-brand-light" strokeWidth={1.5} />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-muted">
+                <f.icon size={22} className="text-brand" strokeWidth={1.8} />
               </div>
-              <h3 className="mb-2 text-[15px] font-semibold text-white">{f.title}</h3>
-              <p className="text-sm leading-relaxed text-slate-400/80">{f.description}</p>
+              <h3 className="mb-2 text-[15px] font-semibold text-foreground">{f.title}</h3>
+              <p className="text-sm leading-relaxed text-foreground-muted">{f.description}</p>
             </div>
           ))}
         </div>
