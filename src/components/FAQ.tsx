@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Minus } from 'lucide-react'
+import { Plus, Minus, Mail } from 'lucide-react'
 import { Reveal } from './Reveal'
 
 const faqs = [
@@ -30,18 +30,29 @@ export function FAQ() {
 
   return (
     <section id="faq" className="section section-alt">
-      <div className="container">
-        <Reveal className="text-center max-w-lg mx-auto mb-12">
+      <div className="container grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-10 lg:gap-16 items-start">
+        <Reveal className="lg:sticky lg:top-28">
           <p className="section-label">FAQ</p>
           <h2 className="h2">Frequently asked questions</h2>
+          <p className="mt-3 text-text-muted">
+            Still deciding? The plan is free to start, so you can try it with a real load before
+            committing anything.
+          </p>
+          <a
+            href="mailto:support@rollfleet.com"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-dark transition-colors"
+          >
+            <Mail size={15} />
+            Ask us anything
+          </a>
         </Reveal>
 
-        <Reveal className="max-w-2xl mx-auto">
+        <Reveal>
           <div className="rounded-2xl border border-border bg-bg divide-y divide-border shadow-sm">
             {faqs.map((faq, i) => {
               const expanded = open === i
               return (
-                <div key={faq.q} className="px-5">
+                <div key={faq.q} className="px-5 transition-colors hover:bg-bg-alt/60 first:rounded-t-2xl last:rounded-b-2xl">
                   <h3>
                     <button
                       type="button"

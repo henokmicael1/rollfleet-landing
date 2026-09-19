@@ -1,11 +1,15 @@
+import { ArrowRight, Mail } from 'lucide-react'
+
+const SIGNUP_URL = '/coming-soon'
+
 const links = {
   Product: [
     { label: 'Features', href: '/#features' },
+    { label: 'How It Works', href: '/#how-it-works' },
     { label: 'FAQ', href: '/#faq' },
   ],
   Company: [
-    { label: 'About', href: '#' },
-    { label: 'Blog', href: '#' },
+    { label: 'Get Started', href: '/coming-soon' },
     { label: 'Contact', href: 'mailto:support@rollfleet.com' },
   ],
   Legal: [
@@ -16,8 +20,8 @@ const links = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg">
-      <div className="container py-12">
+    <footer className="border-t border-border bg-bg-alt">
+      <div className="container py-14">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-5">
@@ -28,14 +32,30 @@ export function Footer() {
               <span className="font-display text-base font-semibold text-text-primary">RollFleet</span>
             </a>
             <p className="text-sm text-text-muted max-w-xs">
-              The modern TMS for owner-operators and small fleets.
+              The modern TMS for owner-operators and small fleets. Dispatch, invoicing, and
+              settlements in one place — free to start.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <a href={SIGNUP_URL} className="btn btn-primary py-2.5 px-5">
+                Get Started Free
+                <ArrowRight size={15} />
+              </a>
+              <a
+                href="mailto:support@rollfleet.com"
+                className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
+              >
+                <Mail size={15} />
+                support@rollfleet.com
+              </a>
+            </div>
           </div>
 
           {/* Links */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title} className="md:col-span-2">
-              <h4 className="font-medium text-text-primary mb-3 text-sm">{title}</h4>
+              <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-primary">
+                {title}
+              </h4>
               <ul className="space-y-2">
                 {items.map((item) => (
                   <li key={item.label}>

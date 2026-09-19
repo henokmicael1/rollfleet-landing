@@ -1,5 +1,4 @@
 import { ArrowRight, CheckCircle2, PlayCircle } from 'lucide-react'
-import { DashboardPreview } from './DashboardPreview'
 
 const SIGNUP_URL = '/coming-soon'
 
@@ -13,7 +12,6 @@ const stats = [
 
 export function Hero() {
   return (
-    <>
     <section className="relative isolate overflow-hidden bg-bg-dark">
       <div className="absolute inset-0" aria-hidden="true">
         <video
@@ -30,7 +28,7 @@ export function Hero() {
         <div className="hero-scrim" />
       </div>
 
-      <div className="container relative pt-32 pb-24 lg:pt-40 lg:pb-36">
+      <div className="container relative pt-32 pb-24 lg:pt-44 lg:pb-32">
         <div className="max-w-3xl">
           <div className="hero-badge mb-6">
             <span className="hero-badge-dot" />
@@ -81,12 +79,5 @@ export function Hero() {
 
       </div>
     </section>
-
-    <div className="relative bg-bg-alt pb-16 lg:pb-24">
-      <div className="container -mt-16 lg:-mt-24">
-        <DashboardPreview />
-      </div>
-    </div>
-    </>
   )
 }
