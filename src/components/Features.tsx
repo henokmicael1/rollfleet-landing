@@ -1,4 +1,5 @@
 import { FileText, LayoutDashboard, DollarSign, Receipt, Truck, ShieldCheck } from 'lucide-react'
+import { Reveal } from './Reveal'
 
 const features = [
   {
@@ -37,20 +38,25 @@ export function Features() {
   return (
     <section id="features" className="section section-alt">
       <div className="container">
-        <div className="text-center max-w-lg mx-auto mb-12">
+        <Reveal className="text-center max-w-lg mx-auto mb-12">
           <p className="section-label">Features</p>
           <h2 className="h2">Everything you need to run your fleet</h2>
-        </div>
+          <p className="mt-3 text-text-muted">
+            One platform from rate con to settlement — no more stitching tools together.
+          </p>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="card group">
-              <div className="icon-box mb-4">
-                <f.icon size={22} strokeWidth={1.5} />
+          {features.map((f, i) => (
+            <Reveal key={f.title} delay={i * 60} className="h-full">
+              <div className="card group h-full">
+                <div className="icon-box mb-4">
+                  <f.icon size={22} strokeWidth={1.5} />
+                </div>
+                <h3 className="h3 mb-2">{f.title}</h3>
+                <p className="text-text-muted text-sm">{f.description}</p>
               </div>
-              <h3 className="h3 mb-2">{f.title}</h3>
-              <p className="text-text-muted text-sm">{f.description}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

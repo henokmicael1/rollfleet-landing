@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
+import { Reveal } from './Reveal'
 
 const faqs = [
   {
@@ -28,37 +29,54 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="section">
+    <section id="faq" className="section section-alt">
       <div className="container">
-        <div className="text-center max-w-lg mx-auto mb-12">
+        <Reveal className="text-center max-w-lg mx-auto mb-12">
           <p className="section-label">FAQ</p>
           <h2 className="h2">Frequently asked questions</h2>
-        </div>
+        </Reveal>
 
-        <div className="max-w-2xl mx-auto divide-y divide-border">
-          {faqs.map((faq, i) => (
-            <div key={i} className="py-5">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-start justify-between gap-4 text-left"
-              >
-                <span className="font-medium text-text-primary">{faq.q}</span>
-                <span className="flex-shrink-0 mt-0.5">
-                  {open === i ? (
-                    <Minus size={16} className="text-accent" />
-                  ) : (
-                    <Plus size={16} className="text-text-muted" />
-                  )}
-                </span>
-              </button>
-              <div className={`overflow-hidden transition-all duration-200 ${
-                open === i ? 'max-h-48 mt-3' : 'max-h-0'
-              }`}>
-                <p className="text-text-muted text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Reveal className="max-w-2xl mx-auto">
+          <div className="rounded-2xl border border-border bg-bg divide-y divide-border shadow-sm">
+            {faqs.map((faq, i) => {
+              const expanded = open === i
+              return (
+                <div key={faq.q} className="px-5">
+                  <h3>
+                    <button
+                      type="button"
+                      onClick={() => setOpen(expanded ? null : i)}
+                      aria-expanded={expanded}
+                      aria-controls={`faq-panel-${i}`}
+                      className="w-full flex items-start justify-between gap-4 py-5 text-left cursor-pointer"
+                    >
+                      <span className="font-medium text-text-primary">{faq.q}</span>
+                      <span
+                        className={`flex-shrink-0 mt-0.5 rounded-full p-1 transition-colors ${
+                          expanded ? 'bg-accent/10' : 'bg-bg-elevated'
+                        }`}
+                      >
+                        {expanded ? (
+                          <Minus size={16} className="text-accent" />
+                        ) : (
+                          <Plus size={16} className="text-text-muted" />
+                        )}
+                      </span>
+                    </button>
+                  </h3>
+                  <div
+                    id={`faq-panel-${i}`}
+                    className={`grid transition-all duration-300 ease-out ${
+                      expanded ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <p className="overflow-hidden text-text-muted text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </Reveal>
       </div>
     </section>
   )

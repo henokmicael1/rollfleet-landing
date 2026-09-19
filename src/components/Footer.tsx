@@ -22,7 +22,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-5">
             <a href="/" className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-light to-accent-dark flex items-center justify-center shadow-sm">
                 <span className="font-display text-sm font-bold text-white">RF</span>
               </div>
               <span className="font-display text-base font-semibold text-text-primary">RollFleet</span>
@@ -41,7 +41,7 @@ export function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                      className="inline-block text-sm text-text-muted hover:text-accent hover:translate-x-0.5 transition-all"
                     >
                       {item.label}
                     </a>
@@ -58,7 +58,7 @@ export function Footer() {
             © {new Date().getFullYear()} RollFleet, LLC
           </p>
           <div className="flex items-center gap-1.5 text-sm text-text-muted">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
             All systems operational
           </div>
         </div>
