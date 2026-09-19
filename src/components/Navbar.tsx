@@ -9,7 +9,7 @@ const links = [
   { label: 'FAQ', href: '/#faq', id: 'faq' },
 ]
 
-export function Navbar() {
+export function Navbar({ overHero = false }: { overHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
@@ -45,12 +45,12 @@ export function Navbar() {
     }
   }, [open])
 
-  const onDark = !scrolled && !open
+  const onDark = overHero && !scrolled && !open
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open ? 'bg-white/80 backdrop-blur-xl border-b border-border/60 shadow-sm' : ''
+        onDark ? '' : 'bg-white/80 backdrop-blur-xl border-b border-border/60 shadow-sm'
       }`}
     >
       <nav className="container flex h-16 items-center justify-between" aria-label="Main">
