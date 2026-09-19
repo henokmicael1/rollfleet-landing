@@ -45,6 +45,8 @@ export function Navbar() {
     }
   }, [open])
 
+  const onDark = !scrolled && !open
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -53,10 +55,16 @@ export function Navbar() {
     >
       <nav className="container flex h-16 items-center justify-between" aria-label="Main">
         <a href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-light to-accent-dark flex items-center justify-center shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-light to-accent-dark flex items-center justify-center shadow-sm shrink-0">
             <span className="font-display text-sm font-bold text-white">RF</span>
           </div>
-          <span className="font-display text-base font-semibold text-text-primary">RollFleet</span>
+          <span
+            className={`font-display text-base font-semibold ${
+              onDark ? 'text-white' : 'text-text-primary'
+            }`}
+          >
+            RollFleet
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -65,8 +73,12 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               aria-current={active === l.id ? 'true' : undefined}
-              className={`relative px-3.5 py-2 text-sm rounded-lg transition-colors hover:bg-bg-elevated ${
-                active === l.id ? 'text-text-primary' : 'text-text-muted hover:text-text-primary'
+              className={`relative px-3.5 py-2 text-sm rounded-lg transition-colors ${
+                onDark
+                  ? 'text-white/80 hover:text-white hover:bg-white/10'
+                  : `hover:bg-bg-elevated ${
+                      active === l.id ? 'text-text-primary' : 'text-text-muted hover:text-text-primary'
+                    }`
               }`}
             >
               {l.label}
@@ -82,7 +94,9 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-2">
           <a
             href={SIGNUP_URL}
-            className="text-sm text-text-muted hover:text-text-primary transition-colors px-3 py-2"
+            className={`text-sm transition-colors px-3 py-2 ${
+              onDark ? 'text-white/80 hover:text-white' : 'text-text-muted hover:text-text-primary'
+            }`}
           >
             Log in
           </a>
@@ -98,7 +112,9 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="md:hidden w-9 h-9 rounded-lg flex items-center justify-center text-text-primary hover:bg-bg-elevated transition-colors cursor-pointer"
+          className={`md:hidden w-9 h-9 rounded-lg flex items-center justify-center transition-colors cursor-pointer ${
+            onDark ? 'text-white hover:bg-white/10' : 'text-text-primary hover:bg-bg-elevated'
+          }`}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
