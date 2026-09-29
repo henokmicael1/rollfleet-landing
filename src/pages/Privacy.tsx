@@ -14,7 +14,7 @@ export function Privacy() {
             <div className="space-y-10 text-[15px]">
               <section>
                 <p className="text-text-secondary leading-relaxed">
-                  RollFleet, LLC ("RollFleet," "we," "us," or "our") is committed to protecting your privacy. This 
+                  Trucker Ease Solution LLC, doing business as RollFleet ("RollFleet," "we," "us," or "our"), is committed to protecting your privacy. This 
                   Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use 
                   the RollFleet transportation management platform (the "Service").
                 </p>
@@ -27,7 +27,7 @@ export function Privacy() {
               <section>
                 <h2 className="h2 text-xl mb-4">1. Data Controller</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  For the purposes of applicable data protection laws, RollFleet, LLC is the data controller responsible 
+                  For the purposes of applicable data protection laws, Trucker Ease Solution LLC (dba RollFleet) is the data controller responsible 
                   for your personal data. For data processing inquiries, contact us at{' '}
                   <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a>.
                 </p>
@@ -336,7 +336,7 @@ export function Privacy() {
                   <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
                   <strong className="text-text-primary">General Support:</strong>{' '}
                   <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
-                  <strong className="text-text-primary">Address:</strong> RollFleet, LLC, Wilmington, Delaware, USA
+                  <strong className="text-text-primary">Address:</strong> Trucker Ease Solution LLC (dba RollFleet), United States
                 </p>
               </section>
             </div>

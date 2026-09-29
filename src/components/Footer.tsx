@@ -75,7 +75,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-sm text-text-muted">
-            © {new Date().getFullYear()} RollFleet, LLC
+            © {new Date().getFullYear()} Trucker Ease Solution LLC, dba RollFleet
           </p>
           <div className="flex items-center gap-1.5 text-sm text-text-muted">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
