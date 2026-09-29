@@ -15,7 +15,7 @@ export function Terms() {
               <section>
                 <p className="text-text-secondary leading-relaxed">
                   These Terms of Service ("Terms" or "Agreement") constitute a legally binding agreement between 
-                  you ("Customer," "you," or "your") and RollFleet, LLC ("RollFleet," "Company," "we," "us," or "our") 
+                  you ("Customer," "you," or "your") and Trucker Ease Solution LLC, doing business as RollFleet ("RollFleet," "Company," "we," "us," or "our"), 
                   governing your access to and use of the RollFleet transportation management system platform 
                   (the "Service" or "Platform").
                 </p>
@@ -294,7 +294,7 @@ export function Terms() {
                   For questions about these Terms, please contact us at:<br />
                   <strong className="text-text-primary">Email:</strong>{' '}
                   <a href="mailto:support@rollfleet.com" className="text-accent hover:underline">support@rollfleet.com</a><br />
-                  <strong className="text-text-primary">Address:</strong> RollFleet, LLC, Wilmington, Delaware, USA
+                  <strong className="text-text-primary">Address:</strong> Trucker Ease Solution LLC (dba RollFleet), United States
                 </p>
               </section>
             </div>

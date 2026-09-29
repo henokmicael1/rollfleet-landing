@@ -76,7 +76,7 @@ export function ComingSoon() {
       {/* Footer */}
       <footer className="container py-6 text-center">
         <p className="text-sm text-text-muted">
-          © {new Date().getFullYear()} RollFleet, LLC
+          © {new Date().getFullYear()} Trucker Ease Solution LLC, dba RollFleet
         </p>
       </footer>
     </div>
